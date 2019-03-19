@@ -1,0 +1,53 @@
+<mat-nav-list>
+    <a mat-list-item>
+      <img mat-list-avatar [src]="country?.flag"/>
+      <span mat-line><b>{{country?.name}}</b></span>
+      <span mat-line>{{country?.capital}}</span>
+    </a>
+  
+    <a mat-list-item>
+      <i class="material-icons">location_on</i>
+      <span mat-line><b>Location</b></span>
+      <span mat-line>{{country?.region}} - {{country?.subregion}}</span>
+    </a>
+  
+    <a mat-list-item>
+      <i class="material-icons">person</i>
+      <span mat-line><b>Population</b></span>
+      <span mat-line>{{country?.population}} people</span>
+    </a>
+  
+    <a mat-list-item>
+      <i class="fas fa-globe-africa"></i>
+      <span mat-line><b>Area</b></span>
+      <span mat-line>{{country?.area}} km²</span>
+    </a>
+  
+    <a mat-list-item>
+        <i class="material-icons">language</i>
+      <span mat-line><b>Language</b></span>
+      <span  
+        mat-line>
+          {{country?.languages[0].name}}
+      </span>
+    </a>
+  
+    <a mat-list-item>
+      <i class="material-icons">attach_money</i>
+      <span mat-line><b>Currency</b></span>
+      <span mat-line>{{country?.currencies[0].name}}</span>
+    </a>
+  
+    <a mat-list-item>
+      <i class="material-icons">access_time</i>
+      <span mat-line><b>Time zone</b></span>
+      <span mat-line>{{ country?.timezones[0] }}</span>
+    </a>
+  
+    <a mat-list-item>
+      <i class="material-icons md-36">local_phone</i>
+      <span mat-line><b>Code</b></span>
+      <span mat-line>+{{ country?.callingCodes[0] }}</span>
+    </a>
+  
+  </mat-nav-list>

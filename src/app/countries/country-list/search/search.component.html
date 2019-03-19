@@ -1,0 +1,9 @@
+<mat-form-field>
+    <input 
+        matInput 
+        placeholder="Search a country" 
+        type="search"
+        (keyup)="debounce.next($event.target.value)"
+        [value]="value">
+</mat-form-field>
+{{filter}}

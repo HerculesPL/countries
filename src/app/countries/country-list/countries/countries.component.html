@@ -1,0 +1,15 @@
+<p class="text-center text-muted" *ngIf="!countries.length"> 
+        Sorry, this not a country.
+</p>
+    
+
+<div 
+    class="countries-list-flex"
+    >
+        <app-country
+            *ngFor="let country of countries" 
+            [country]="country"
+        >
+        </app-country>
+</div>
+
