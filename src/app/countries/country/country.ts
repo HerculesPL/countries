@@ -11,6 +11,7 @@ export interface Country {
     currencies: Currency;
     timezones: string[];
     callingCodes: string[];
+    favorite: boolean;
 }
 
 interface Language {

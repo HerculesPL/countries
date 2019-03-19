@@ -8,6 +8,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FlexLayoutModule} from '@angular/flex-layout';
 
 import { CountriesModule } from './countries/countries.module';
+import { CoreModule } from './core/core.module';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { CountriesModule } from './countries/countries.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     CountriesModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

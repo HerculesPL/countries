@@ -1,9 +1,7 @@
-import { Component, Input, OnChanges, SimpleChanges, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Country } from './country';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { CountryDetailComponent } from '../country-detail/country-detail.component';
-import { CountryService } from './country.service';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-country',
@@ -12,12 +10,11 @@ import { Observable } from 'rxjs';
 })
 export class CountryComponent {
   
-  country$: Observable<Country>;
   selectedCountry: string;
+  favoritedCountry: boolean;
 
   constructor (
-    private bottomSheet: MatBottomSheet,
-    private countryService: CountryService
+    private bottomSheet: MatBottomSheet
       ) {}
 
   openBottomSheet(selectedCountry: string) {
@@ -35,9 +32,16 @@ export class CountryComponent {
     
   }
 
-  favorited(country: Country) {
-    console.log(country.alpha3Code);
+  favoriteButton(favoritedCountry: boolean) {
+    console.log(this.favoritedCountry);
+    if (!favoritedCountry) {
+      this.favoritedCountry = true;
+
+    } else {
+      this.favoritedCountry = false;
+    }
   }
+
 
   @Input() country: Country[] = [];
 

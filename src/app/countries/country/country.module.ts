@@ -9,6 +9,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { CountryDetailModule } from '../country-detail/country-detail.module';
 import { CountryDetailComponent } from '../country-detail/country-detail.component';
+import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -21,7 +22,8 @@ import { CountryDetailComponent } from '../country-detail/country-detail.compone
         MatCardModule,
         MatButtonModule,
         RouterModule,
-        CountryDetailModule
+        CountryDetailModule,
+        MatIconModule
     ],
     exports: [ CountryComponent ],
     entryComponents: [ CountryDetailComponent ]

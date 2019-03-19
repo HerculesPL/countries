@@ -11,6 +11,7 @@ import { FilterByName } from './filter-by-name.pipe';
 import { MatGridListModule } from '@angular/material/grid-list';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
 
 
 
@@ -27,7 +28,8 @@ import {MatInputModule} from '@angular/material/input';
         MatGridListModule,
         MatFormFieldModule,
         MatInputModule,
-        RouterModule
+        RouterModule,
+        MatIconModule
     ],
     exports: [
         CountryListComponent

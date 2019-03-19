@@ -21,7 +21,6 @@ export class CountryDetailComponent implements OnInit {
     private bottomSheetRef: MatBottomSheetRef<CountryDetailComponent>) { }
 
   ngOnInit() {
-    console.log(this.data);
     const alpha3Code = this.data;
     this.countryService
     .findByName(alpha3Code)
