@@ -1,0 +1,10 @@
+//set countries-app as a flex container and ajust layout
+.countries-list-flex {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: space-evenly;
+    margin-top: 4em;
+}

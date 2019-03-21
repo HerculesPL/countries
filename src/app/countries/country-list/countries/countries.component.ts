@@ -10,6 +10,7 @@ import { Country } from '../../country/country';
 
 export class CountriesComponent{
     
+    //receiving data from country-list.component
     @Input() countries: Country[] = [];
   
     constructor() { }

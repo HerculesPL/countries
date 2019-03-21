@@ -1,5 +1,4 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 
 import { CountryService } from '../country/country.service';
 import { Country } from '../country/country';
@@ -14,19 +13,20 @@ export class CountryDetailComponent implements OnInit {
 
   country: Country;
 
+  //inject bottomSheet from angular material
   constructor(
-    private route: ActivatedRoute,
     private countryService: CountryService,
     @Inject(MAT_BOTTOM_SHEET_DATA) public data: any,
     private bottomSheetRef: MatBottomSheetRef<CountryDetailComponent>) { }
 
+  //get country through alpha3Code using countryService
   ngOnInit() {
     const alpha3Code = this.data;
     this.countryService
     .findByName(alpha3Code)
     .subscribe(country => this.country = country);
   }
-
+  //dismiss bottomsheet
   myAction(str) {
     this.bottomSheetRef.dismiss(str)
   }

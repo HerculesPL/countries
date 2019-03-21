@@ -1,7 +1,11 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
 import { Country } from './country';
-import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { CountryDetailComponent } from '../country-detail/country-detail.component';
+
+//angular material imports
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
+
 
 @Component({
   selector: 'app-country',
@@ -10,13 +14,23 @@ import { CountryDetailComponent } from '../country-detail/country-detail.compone
 })
 export class CountryComponent {
   
+  
   selectedCountry: string;
-  favoritedCountry: boolean;
+
+  icon = "star_outline"
+
+  //function to receive emit output from favorite.component
+  recieveIcon($event) {
+    
+    this.icon = $event;
+
+  }
 
   constructor (
     private bottomSheet: MatBottomSheet
       ) {}
 
+  //fuction from angular material to open bottom sheet passing alpha3Code to use it in the findByName method from countryService
   openBottomSheet(selectedCountry: string) {
     this.selectedCountry = selectedCountry;
     let sheet = this.bottomSheet.open(CountryDetailComponent, {
@@ -31,18 +45,7 @@ export class CountryComponent {
     });
     
   }
-
-  favoriteButton(favoritedCountry: boolean) {
-    console.log(this.favoritedCountry);
-    if (!favoritedCountry) {
-      this.favoritedCountry = true;
-
-    } else {
-      this.favoritedCountry = false;
-    }
-  }
-
-
+  //receiving data from countries.component
   @Input() country: Country[] = [];
 
 }

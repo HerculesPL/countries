@@ -1,8 +1,8 @@
 
-<mat-card class="example-card mt-4 ml-1 mr-1">
-  <img mat-card-image class="image" [src]="country.flag" [alt]="country.name">
+<mat-card class=" mt-4 ml-1 mr-1">
+  <img mat-card-image class="card-image" [src]="country.flag" [alt]="country.name">
   <mat-card-header>
-    <img mat-card-avatar class="example-header-image" [src]="country.flag">
+    <img mat-card-avatar [src]="country.flag">
     <mat-card-title>{{country.name}}</mat-card-title>
     <mat-card-subtitle>{{country.capital}}</mat-card-subtitle>
   </mat-card-header>
@@ -12,14 +12,8 @@
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button (click)="favoriteButton(country.favorited)">LIKE</button>
-    <!-- <button [routerLink]="['c', alpha3Code.toLowerCase()]" mat-button>KNOW MORE</button> -->
-    <button (click)="openBottomSheet(country.alpha3Code.toLowerCase())" mat-raised-button color="primary">KNOW MORE</button>
-    <mat-icon
-      *ngIf="!country.favorited" 
-      color="primary">favorite_outline</mat-icon>
-    <mat-icon
-      *ngIf="country.favorited" 
-      color="primary">favorite </mat-icon>
+      <app-favorite (iconEvent) = "recieveIcon($event)"></app-favorite>
+      <button (click)="openBottomSheet(country.alpha3Code.toLowerCase())" mat-raised-button color="accent">KNOW MORE</button>
+      <mat-icon color="warn">{{icon}}</mat-icon>
   </mat-card-actions>
 </mat-card>

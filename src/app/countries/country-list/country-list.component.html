@@ -1,2 +1,2 @@
 <app-search (onTyping)="filter = $event" [value]="filter"></app-search>
-<app-countries [countries]="countries | filterByName: filter"></app-countries>
+<app-countries [countries]="countries | filterByName: filter" class="countries-list-flex"></app-countries>

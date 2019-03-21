@@ -1,3 +1,12 @@
+//set size of mat-form-field
 mat-form-field {
     width: 80%;
+}
+
+//set layout of mat-toobar
+mat-toolbar {
+    display: flex;
+    justify-content: center;
+    height: 3.5em;
+    box-shadow: 0 0 1px rgba(0,0,0,0.8)
 }

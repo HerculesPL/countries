@@ -6,6 +6,8 @@ import { Country } from '../country/country';
 })
 
 export class FilterByName implements PipeTransform{
+
+    //filtering by countries name
     transform(countries: Country[], nameQuery: string) {
         nameQuery = nameQuery
             .trim()

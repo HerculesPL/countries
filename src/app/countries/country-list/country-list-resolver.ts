@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { Resolve } from '@angular/router';
 import { Observable } from 'rxjs';
 
 
@@ -13,7 +13,8 @@ export class CountryListResolver implements Resolve<Observable<Country[]>>{
 
     constructor (private service: CountryService) {}
 
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Country[]>{
+    //resolver to get countries before the page is loaded
+    resolve(): Observable<Country[]>{
         return this.service.getAll();
     }
 }

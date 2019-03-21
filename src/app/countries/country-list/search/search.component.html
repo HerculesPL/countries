@@ -1,13 +1,15 @@
-<mat-form-field class="example-full-width ml-4">
-    <input 
-        matInput 
-        placeholder="Search a country" 
-        type="search"
-        (keyup)="debounce.next($event.target.value)"
-        [value]="value">
-        <mat-icon  
-            matSuffix
-            color="primary">
-                search
-        </mat-icon>
-</mat-form-field>
+<mat-toolbar color="primary" class="fixed-top">
+    <mat-form-field class="ml-4 mt-3">
+        <input 
+            matInput 
+            placeholder="Search a country" 
+            type="search"
+            (keyup)="debounce.next($event.target.value)"
+            [value]="value">
+            <mat-icon  
+                matSuffix
+                color="accent">
+                    search
+            </mat-icon>
+    </mat-form-field>
+</mat-toolbar>

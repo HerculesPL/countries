@@ -1,29 +1,30 @@
-.example-card {
+//set size for mat-card
+mat-card {
   max-width: 28em;
   margin: 0 auto;
-  min-height: 33em;
-  background-color: accent;
-  
+  min-height: 33em;  
 }
-
-.example-header-image {
-  background-size: cover;
-}
-
-.bottom-sheet-container {
-  width: 50vw;
- }
-
-.image{
-  height: 17em; /* adjust as needed */
+//ajust image size
+.card-image{
+  height: 17em; 
   object-fit: cover;
 }
-
+//ajust paragraph
 p {
   min-height: 6em;
 }
-
+//ajust subtitle
 mat-card-subtitle {
   min-height: 2em;
+}
+//set icon size and place it to the right
+mat-icon {
+  font-size: 3em;
+  margin-left: 160px; 
+}
+//set mat-card-actions to flexbox
+mat-card-actions {
+  display: flex;
+  justify-content: flex-start;
 }
 
